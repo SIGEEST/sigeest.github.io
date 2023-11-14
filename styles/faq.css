@@ -1,0 +1,82 @@
+body {background-color: #F4F4F4;}
+
+.sectionFaq {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 2rem;
+}
+
+.btnScrolltop {right: 11px; left: inherit;}
+
+.sectionFaq:first-of-type {min-height: 90vh;}
+
+.title {
+    font-size: 5rem;
+    text-align: center;
+}
+
+.titleSectBox {margin-bottom: 2rem;}
+
+.sectDesc {text-align: left;}
+
+.index {
+    border-width: .1rem 0rem;
+    border-style: solid;
+    border-color: #225A8D;
+    width: 100%;
+}
+
+.faqList {
+    list-style: none;
+    width: max-content;
+}
+
+.faqItem {
+    margin-bottom: .65rem;
+    width: max-content;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.faqItem a {
+    text-decoration: none;
+    color: #225A8D;
+    transition: color .3s ease-in-out;
+}
+
+.faqItem a:hover ~ .underline {scale: 1 .5;}
+
+.underline {color: #082D4F;}
+
+article div {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+img {
+    width: 50%;
+    outline: .1rem solid #082D4F;
+}
+
+@media screen and (max-width: 900px) {
+    img {width: 80%;}
+}
+
+@media screen and (max-width: 600px) {
+
+    .faqItem a {font-size: .75rem;}
+
+    img {width: 320px;}
+
+}
+
+@media screen and (max-width: 480px) {
+
+    .faqItem a {font-size: .55rem;}
+
+    img {width: 300px;}
+
+}

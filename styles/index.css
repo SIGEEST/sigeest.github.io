@@ -1,0 +1,760 @@
+:root {
+    --bgColor: #FFF;
+    --bgSColor: #F4F4F4;
+    --pColor: #5996CF;
+    --sColor: #225A8D;
+    --dColor: #8A8A8A;
+    --hbtnColor: #082D4F;
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--sColor);
+    height: 25px;
+    transition: background-color .6s ease-in-out;
+}
+
+body::-webkit-scrollbar-thumb:hover {background-color: #184A79;}
+
+body::-webkit-scrollbar-track {background: transparent;}
+
+.logoBox {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    background-color: var(--pColor);
+    border-radius: 0% 1% 100% 1%;
+    left: 0px;
+    top: 0px;
+}
+
+.logo {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+.header {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    height: 100px;
+}
+
+.nav {
+    width: 80%;
+    margin-right: 1rem;
+}
+
+.navItems {
+    padding: 0;
+    margin: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.navItems li {
+    list-style: none;
+    margin: 0 .85rem;
+}
+
+.item {
+    color: var(--pColor);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.3rem;
+    transition: color .4s ease-in-out;
+}
+
+.item:hover {color: var(--sColor);}
+
+.button {
+    font-weight: 600; 
+    text-decoration: none;
+    border: none;
+    font-size: 1.3rem;
+    color: #FFF;
+    border-radius: 20px;
+    background-color: var(--sColor);
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    transition: background .3s ease-in-out;
+}
+
+.button:hover, .btnScrolltop:hover {background: var(--hbtnColor);}
+
+.underline {
+    scale: 0;
+    height: 4px;
+    width: 100%;
+    background-color: var(--sColor);
+    transition: scale .4s ease-in-out;
+}
+
+.item:hover ~ .underline {scale: 1;}
+
+.main {
+    min-height: 90vh;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-around;
+}
+
+.firstSection {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.firstSection * {margin: 1rem;}
+
+.titleBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 600px;
+    height: 450px;
+}
+
+.titleImg {
+    display: flex;
+    width: 600px;
+    height: 450px;
+}
+
+.title {
+    margin: 0;
+    color: var(--pColor);
+    font-size: 9rem;
+    font-weight: 800;
+}
+
+.sectDesc {
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.7rem;
+    color: var(--dColor);
+}
+
+.titleBox .button {margin: 2rem;}
+
+.arrowDown {
+    height: 100px;
+    width: 100%;
+    text-align: center;
+}
+
+.arrow {
+    text-decoration: none;
+    font-size: 3.5rem;
+    color: var(--pColor);
+    animation: rebote 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rebote {
+    20% {transform: translateY(-20px);}
+    40% {transform: translateY(0px);}
+    60% {transform: translateY(-10px);}
+    100% {transform: translateY(0px);}
+}
+
+.section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 4rem 0 8rem;
+}
+
+.section:nth-child(odd) {background: var(--bgSColor);}
+
+.titleSectBox {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 4rem;
+}
+
+.titleSectBox:last-of-type {margin-bottom: 1.5rem;}
+
+.titleSection {
+    margin: 4rem 4rem .5rem 4rem;
+    font-size: 3rem;
+    color: var(--pColor);
+    font-weight: 800;
+}
+
+.titleSection a {
+    text-decoration: none;
+    color: inherit;
+    transition: color .3s ease-in-out;
+}
+
+.titleSection a[name="FAQ"]:hover {color: var(--sColor);}
+
+.cardsPresentation {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.cardPresentation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--bgColor);
+    position: relative;
+    width: 400px;
+    margin: 1rem;
+    border-radius: 40px;
+    padding: 2rem;
+    color: #FFF;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+    transition: scale 1s ease-in-out;
+}
+
+.cardDiv {
+    height: 0;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    position: absolute;
+    border-radius: inherit;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: var(--sColor);
+    filter: opacity(.9);
+    transition: height .6s ease;
+}
+
+.cardDiv p {
+    text-align: left;
+    padding: 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #FFF;
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+.cardPresentation:hover > .cardDiv {height: 100%;}
+
+.cardPresentation:hover > .cardDiv p {opacity: 1;}
+
+.cardPresentation:hover > span {color: var(--bgSColor);}
+
+.cardPresentation span {
+    display: inline-block;
+    z-index: 1;
+    margin: 1rem;
+    text-align: center;
+    font-weight: 800;
+    font-size: 2rem;
+    color: var(--pColor);
+    transition: color .8s ease;
+}
+
+.imgPresen {
+    height: 300px;
+    width: 255px;
+}
+
+.slider {
+    width: 80%;
+    text-align: center;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    padding-bottom: 1rem;
+    position: relative;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+}
+
+.slides::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+.slides::-webkit-scrollbar-thumb {
+    background-color: var(--sColor);
+    border-radius: 40px;
+}
+
+.slides::-webkit-scrollbar-track {background: transparent;}
+
+.slides article {
+    scroll-snap-align: center;
+    position: sticky;
+    flex-shrink: 0;
+    width: 100%;
+    height: 600px;
+    border-radius: 40px;
+    padding: 2rem;
+    background-color: var(--bgSColor);
+    overflow-y: scroll;
+}
+
+.slides article::-webkit-scrollbar {background-color: transparent;}
+
+.slides article:not(:last-of-type) {margin-right: 50px;}
+
+.articleTitle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.articleTitle h2 {
+    color: var(--sColor);
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.slides p {
+    text-align: left;
+    font-size: 1.35rem;
+    font-weight: 500;
+}
+
+.slider a {
+    margin: 0 .25rem 1rem .25rem;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    display: inline-flex;
+    width: 1.65rem;
+    height: 1.65rem;
+    background-color: var(--sColor);
+    border-radius: 50%;
+    position: relative;
+    color: #FFF;
+}
+
+.slider a:active {transform: translateY(2px);}
+
+.speech {
+    align-items: center;
+    width: max-content;
+    height: max-content;
+    margin-right: .5rem;
+    background-color: var(--sColor);
+    border-radius: 100%;
+    padding: 0.75rem;
+    color: #FFF;
+    cursor: pointer;
+    transition: background-color .3s ease-in-out;
+}
+
+.speech:hover {background-color: var(--hbtnColor);}
+
+.works {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    perspective: 80rem;
+}
+
+.work {
+    padding: 3rem 1rem;
+    width: 270px;
+    border-radius: 30px;
+    text-align: center;
+    background: var(--bgColor);
+    margin: 1rem;
+    transition: transform 1s ease-in-out;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.work::after {
+    background: var(--pColor);
+    transform: rotateY(180deg);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    position: absolute;
+    border-radius: 30px;
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.workIcon {
+    color: var(--pColor);
+    font-size: 5rem;
+}
+
+.workTitle {
+    font-size: 1.4rem;
+    margin: 1rem;
+    color: var(--dColor);
+    font-weight: 800;
+}
+
+.workTeam {
+    padding: 0;
+    list-style: none;
+}
+
+.workTeam li {
+    font-weight: 600;
+    color: var(--dColor);
+}
+
+.workTeam li:not(:last-of-type) {margin-bottom: .5rem;}
+
+.footerTitle {color: #FFF;}
+
+.footer {
+    padding: 0;
+    background: var(--pColor);
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.footerSect, .form {
+    display: flex;
+    flex-direction: column;
+    color: #FFF;
+}
+
+.footerSect {margin: 2rem;}
+
+.input, .message {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: outline .2s ease-in-out;
+}
+
+.input {
+    height: 40px;
+    border-radius: 10px;
+    width: 400px;
+    padding: 0 1rem;
+}
+
+.input:focus, .message:focus {outline: 5px var(--sColor) solid;}
+
+.inTitle {
+    font-size: 1.2rem;
+    color: #FFF;
+    margin: 2rem 0 .85rem;
+    width: max-content;
+}
+
+.message {
+    resize: none;
+    padding: 1rem;
+    border-radius: 20px;
+}
+
+.btnSend {
+    margin: 1rem;
+    align-self: center;
+    width: max-content;
+}
+
+.dataContact {
+    font-size: 1.3rem;
+    margin-left: .25rem;
+}
+
+.dataContact a {
+    text-decoration: none;
+    color: #FFF;
+}
+
+.nombreTecnica {font-size: 2rem;}
+
+.nombreTecnica:first-of-type {margin-bottom: 0.25rem;}
+
+.dataBox {
+    text-align: center;
+    margin: 1rem;
+}
+
+.btnScrolltop {
+    position: fixed;
+    z-index: 2;
+    bottom: 20px;
+    right: 20px;
+    padding: 25px 27px;
+    background: var(--sColor);
+    border: none;
+    color: #FFF;
+    border-radius: 100%;
+    cursor: pointer;  
+    transform: translateY(300px);
+    transition: all 0.4s ease-in-out;
+}
+
+.btnScrolltopOn {transform: translateY(0);}
+
+@keyframes show {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+}
+
+.card {
+    width: 400px;
+    margin: 2rem;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.buttonCard {
+    width: 100%;
+    height: 100px;
+    padding: 3rem;
+    font-size: 1.2rem;
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 30px;
+    transition: all .3s ease-in-out;
+    background-color: var(--bgSColor);
+}
+
+.buttonCard:hover {
+    background-color: var(--pColor);
+    color: #FFF;
+}
+
+.card div:nth-of-type(2) {
+    margin-top: 1rem;
+    padding: 0rem 2rem;
+    height: 200px;
+    border-radius: 10px;
+    border: 1px solid var(--dColor);
+}
+
+.card div:nth-of-type(2) p {text-align: left;}
+
+.cardShow {
+    display: flex;
+    align-items: center;
+    animation: show .6s ease-in-out;
+}
+
+.cardHide {display: none;}
+
+.qnIcon {
+    position: absolute;
+    left: 20px;
+}
+
+.checkBtn {
+    display: none !important;
+    color: var(--sColor);
+    cursor: pointer;
+    transition: color .3s ease-in-out;
+}
+
+.checkBtn:hover {color: var(--hbtnColor);}
+
+.check {display: none;}
+
+@media screen and (max-width: 1600px) {
+
+    .logoBox {
+        width: 200px;
+        height: 200px;
+    }
+
+    .item {font-size: 1.2rem;}
+
+    .cardPresentation {width: 320px;}
+
+    .titleImg {display: none;}
+
+    .main {justify-content: center;}
+
+    .logo {width: 140px;}
+}
+
+@media screen and (max-width: 1024px) {
+
+    .logoBox {
+        width: 150px;
+        height: 150px;
+    }
+
+    .slides p {font-size: 1.2rem;}
+
+    .logo {width: 100px;}
+
+    .item, .button {font-size: 1.1rem;}
+
+    .title {font-size: 8rem;}
+
+    .sectDesc {font-size: 1.5rem;}
+
+    .articleTitle h2 {font-size: 1.85rem;}
+}
+
+@media screen and (max-width: 900px) {
+
+    .nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: max-content;
+    }
+
+    .checkBtn {
+        display: inline-flex !important;
+        position: fixed;
+        z-index: 2;
+    }
+
+    .btnScrolltop {left: 22px; right: inherit;}
+
+    .navItems {
+        margin: 0;
+        top: 0;
+        display: flex;
+        position: fixed;
+        z-index: 1;
+        flex-direction: column;
+        width: 30%;
+        right: -30%;
+        background: var(--bgSColor);
+        justify-content: space-evenly;
+        align-items: center;
+        border-left: 0.05rem solid var(--dColor);
+        filter: opacity(.9);
+        padding-top: 4rem;
+        overflow: scroll;
+        transition: right .4s;
+    }
+
+    .speech {padding: .65rem;}
+
+    .articleTitle h2 {font-size: 1.5rem;}
+
+    .slides p {font-size: 1.1rem;}
+
+    .navItems::-webkit-scrollbar {display: none;}
+
+    .item {color: var(--sColor)}
+
+    .item:hover {color: var(--hbtnColor);}
+
+    .underline {background-color: var(--hbtnColor);}
+}
+
+@media screen and (max-width: 768px) {
+
+    .titleBox {justify-content: space-evenly;}
+
+    .title {font-size: 6rem;}
+
+    .button {font-size: 1.1rem;}
+
+    .titleSection {font-size: 2.5rem;}
+
+    .articleTitle h2 {font-size: 1.4rem;}
+
+    .slides p {font-size: 1rem;}
+
+    .card div:nth-of-type(2) {height: max-content;}
+
+    .navItems {
+        width: 50%;
+        right: -50%;
+    }
+
+    iframe {width: 100%;}
+}
+
+@media screen and (max-width: 480px) {
+
+    .logoBox {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .navItems {
+        width: 100%;
+        right: -100%;
+        border: none;
+    }
+
+    .speech {padding: .5rem;}
+
+    .buttonCard p {font-size: 1rem;}
+
+    .checkBtn {scale: 0.75;}
+
+    .title {font-size: 5rem;}
+
+    .sectDesc {font-size: 1.35rem;}
+
+    .logo {width: 90px;}
+
+    .titleSection {font-size: 2rem;}
+
+    .articleTitle h2 {font-size: 1.25rem;}
+
+    .cardPresentation p {font-size: 1rem;}
+    
+    .cardPresentation span {font-size: 1.85rem;}
+    
+    .btnScrolltop {padding: 15px;}
+    
+    .message, .input {width: 275px;}
+
+    .nombreTecnica {font-size: 1.5rem}
+
+    .dataContact {font-size: .9rem;}
+}
